@@ -13,13 +13,13 @@ Rails.application.routes.draw do
   end 
 
     # Home page
-    root to: 'page#home'
+    root to: 'pages#home'
 
     # Static pages
-    get '/aboutus', to: 'page#aboutus'
-    get '/howitworks', to: 'page#howitworks'
-    get '/styleguide', to: 'page#styleguide'
-    get '/nailingyourfit', to: 'page#nailingyourfit'
+    get '/aboutus', to: 'pages#aboutus'
+    get '/howitworks', to: 'pages#howitworks'
+    get '/styleguide', to: 'pages#styleguide'
+    get '/nailingyourfit', to: 'pages#nailingyourfit'
     
     resources :product, only: [:index, :show]
 

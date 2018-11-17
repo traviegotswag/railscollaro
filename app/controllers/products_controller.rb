@@ -1,6 +1,6 @@
 # helper_method :sort_column, :sort_direction
 
-class SkuController < ApplicationController
+class ProductsController < ApplicationController
 
     def index
         @products = Product.all
