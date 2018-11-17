@@ -2,6 +2,24 @@ articles.error.any?
 articles.error.full_messages
 
 
+Dropdown box for categories
+<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color:#FFFFFF;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <% Category.all.each do |category| %>
+              <%= link_to category.product_category, category_products_path(category), :class => "dropdown-item" %>
+            <% end %>
+          </div>
+        </li>
+        
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Find products" aria-label="Search">
+            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+
 
 
 # README

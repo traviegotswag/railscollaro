@@ -1,4 +1,4 @@
-class Sku < ApplicationRecord
+class Product < ApplicationRecord
 
     belongs_to :productincart
   

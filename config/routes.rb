@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get '/styleguide', to: 'page#styleguide'
     get '/nailingyourfit', to: 'page#nailingyourfit'
     
-    resources :sku, only: [:index, :show]
+    resources :product, only: [:index, :show]
 
   # Sorting functions
   # resources :fabrictypecategories, only: [:index] do
