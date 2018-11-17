@@ -38,8 +38,8 @@
                 <li class="nav-item"><%= link_to "Login/Signup", new_user_session_path, :class => "nav-link", :style => "color:#FFFFFF;" %></li>
               <%# <li class="nav-item"><%= link_to 'Sign Up', new_user_registration_path, :class => "nav-link",:style => "color:#FFFFFF;" %>
               <% else %>
+                <span class="navbar-text" style="color:#FFFFFF;"><%= link_to 'Profile', user_path(current_user.id), :style => "color:#FFFFFF;" %></span>
                 <li class="nav-item"><%= link_to 'Logout', destroy_user_session_url, method: :delete, :class => "nav-link", :style => "color:#FFFFFF;" %></li>
-                <span class="navbar-text" style="color:#FFFFFF;">Welcome back, <%= link_to current_user.email, user_path(current_user.id), :style => "color:#FFFFFF;" %>!</span>
             <% end %>
             </ul>
 
