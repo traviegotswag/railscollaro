@@ -1,14 +1,8 @@
-# helper_method :sort_column, :sort_direction
 
 class ProductsController < ApplicationController
 
     def index
         @products = Product.all
-        # if Category.find_by_id(params[:category_id])
-        #   @products = Product.where(category_id: params[:category_id]).order(sort_column + ' ' + sort_direction)
-        # else
-        #   @products = Product.order(sort_column + ' ' + sort_direction)
-        # end
     end
     
     def show
@@ -16,3 +10,11 @@ class ProductsController < ApplicationController
     end
 
 end
+
+        # if Category.find_by_id(params[:category_id])
+        #   @products = Product.where(category_id: params[:category_id]).order(sort_column + ' ' + sort_direction)
+        # else
+        #   @products = Product.order(sort_column + ' ' + sort_direction)
+        # end
+
+        # helper_method :sort_column, :sort_direction

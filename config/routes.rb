@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   resources :users do
     # index/show needed?
-    resources :profile, only: [:show, :update] 
-    resources :style, only: [:show, :create, :edit]
-    resources :measurement, only: [:show, :create, :edit]
-    resources :order, only: [:index, :create] do 
-        resources :productincart, only: [:index]
+    resources :profiles, only: [:show, :update] 
+    resources :styles, only: [:show, :create, :edit]
+    resources :measurements, only: [:show, :create, :edit]
+    resources :orders, only: [:index, :create] do 
+        resources :order_items, only: [:index]
       end
   end 
 
@@ -21,7 +21,8 @@ Rails.application.routes.draw do
     get '/styleguide', to: 'pages#styleguide'
     get '/nailingyourfit', to: 'pages#nailingyourfit'
     
-    resources :product, only: [:index, :show]
+    #Product page
+    resources :products, only: [:index, :show]
 
   # Sorting functions
   # resources :fabrictypecategories, only: [:index] do
