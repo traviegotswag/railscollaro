@@ -1,0 +1,74 @@
+<div class = "container-fluid">
+    <div class = "container">
+        <div class="row">
+        <%# item photo should be manipulated later %>
+			<div class="col-xs-5 item-photo">
+            <%# fix the max-width problem %>
+                <%= image_tag @product.image_url_2, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid" %>
+            </div>
+
+            <div class="col-xs-7" style="border:0px solid white">
+                	</br>
+                <div class="card-body text-dark" style="max-width: 40rem;">
+					<div class="card-header bg-transparent">
+						<h3 class="d-inline"><%= @product.name %></h3>
+                        <h4 class="d-inline float-right">SGD<%= number_to_currency(@product.price, delimiter: ", ") %></h4>
+					</div>
+                    
+                    <div class="card-body bg-transparent mb-0">
+						<p class="card-text"><%= @product.description %></p>	
+					</div>    
+                
+					<div class="card-body bg-transparent mt-0 pt-0">
+                        <div>
+                            <p class="card-text d-inline">Fabric Brand:</p>
+                            <p class="card-text d-inline float-right"><%= @product.brand %></p>
+					    </div>
+
+                        <div>
+                            <p class="card-text d-inline" style="">Fabric Type:</p>
+                            <p class="card-text d-inline float-right"><%= @product.fabric_type %></p>
+					    </div>
+
+                        <div>
+                            <p class="card-text d-inline">Fabric Transparency:</p>
+                            <p class="card-text d-inline float-right"><%= @product.transparency %></p>
+					    </div>
+
+                        <div>
+                            <p class="card-text d-inline">Product Color:</p>
+                            <p class="card-text d-inline float-right"><%= @product.color %></p>
+					    </div>
+                    </div>
+
+                    <div>
+                    <%# CREATE 3 ROUTES %>
+                        <button type="button" class="btn btn-primary d-inline"><%= link_to 'Get Fabric Sample', root_path, :style => 'color:#FFFFFF' %></button>
+                        <button type="button" class="btn btn-primary d-inline"><%= link_to 'Customise Shirt', root_path, :style => 'color:#FFFFFF' %></button>
+                    <%# CREATE CONDITIONAL FORM %>
+                        <button type="button" class="btn btn-primary d-block mt-2"><%= link_to 'Add to Cart', root_path, :style => 'color:#FFFFF0' %></button>
+                    </div>
+
+                </div>
+			</div>
+
+
+        </div>
+    </div>  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

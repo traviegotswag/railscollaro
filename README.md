@@ -19,8 +19,10 @@ Dropdown box for categories
             <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
         </form>
 
-
-
+LINK TO WEBSITES FOR IMAGES
+<%= link_to href: 'http://www.example.com/' do %>
+    <%= image_tag 'happyface.png', width: 136, height: 67, alt: 'a face that is unnervingly happy'%>
+<% end %>
 
 # README
 

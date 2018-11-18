@@ -6,9 +6,8 @@ class ProductsController < ApplicationController
     end
     
     def show
-        @product = Product.find(params[:id])
-    end
-
+        @product = Product.find_by(name: params[:name])
+    end 
 end
 
         # if Category.find_by_id(params[:category_id])

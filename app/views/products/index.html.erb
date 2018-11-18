@@ -1,25 +1,31 @@
 <div class = "container-fluid">
 	<div class = "container">
 
+
 		<div class = "row">
+
 			<% for product in @products %>
 				<div class="col-sm-4">
 					<div class="card border-primary mb-3" style = "margin-bottom: 10px">
 						<div class="card">
-							<%= image_tag product.image_url_2, :style => 'width: 250px; height: 250px; align: left; margin-left: auto; margin-right: auto; display: block; padding-top: 10px;' %>
-							<p><%= link_to 'Product', product_path(id: product.id) %></p>
+							<%= link_to product_path(name:product.name) do %>
+								<%= image_tag product.image_url_2, :style => 'width: 250px; height: 250px; align: left; margin-left: auto; margin-right: auto; display: block; padding-top: 10px;' %>
+							<% end %>
+
 							<div class="card-body text-primary">
-								<h5 class="card-title" style ="text-align: left"><%= product.name %></h5>
-								<h5 class="card-title" style ="text-align: left"><%= product.fabric_type %></h5>
-								<h5 class="card-title" style ="text-align: left">SGD<%= number_to_currency(product.price, delimiter: ", ") %></h5>
+								<%= link_to product_path(name:product.name) do %>
+									<h6 class="card-title" style ="text-align: left"><%= product.name %></h6>
+								<% end %>
+									<h6 class="card-title" style ="text-align: left"><%= product.fabric_type %></h6>
+									<h6 class="card-title" style ="text-align: left">SGD<%= number_to_currency(product.price, delimiter: ", ") %></h6>
 							</div>
-
 						</div>
-
 					</div>
 				</div>
 			<% end %>
+
 		<div>
+
 
 	<div>
 </div>

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     get '/nailingyourfit', to: 'pages#nailingyourfit'
     
     #Product page
-    resources :products, only: [:index, :show]
+    resources :products, only: [:index, :show], param: :name
 
   # Sorting functions
   # resources :fabrictypecategories, only: [:index] do
