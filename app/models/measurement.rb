@@ -1,8 +1,5 @@
 class Measurement < ApplicationRecord
     
     belongs_to :user
-    belongs_to :productincart
-  
-  end
-  
-  
+    belongs_to :order_item
+end
