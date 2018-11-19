@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   resources :users do
     # index/show needed?
-    resources :profiles, only: [:show, :update] 
-    resources :styles, only: [:show, :create, :edit]
-    resources :measurements, only: [:show, :create, :edit]
+    resources :profiles
+    resources :styles
+    resources :measurements
     resources :orders, only: [:index, :create] do 
-        resources :order_items, only: [:index]
+        resources :order_items
       end
   end 
 
