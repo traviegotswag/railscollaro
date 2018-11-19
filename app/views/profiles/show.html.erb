@@ -1,0 +1,14 @@
+    <div class = "custom-control">
+        <h5>Profile Info</h5>
+        <li><strong>Shirt Size: </strong><%= @profile.size %></li>
+        <li><strong>Height: </strong><%= @profile.height %>metres</li>
+        <li><strong>Weight: </strong><%= @profile.weight %>kg</li>
+        <li><strong>Mid-section: </strong><%= @profile.belly %></li>
+        <li><strong>Wears watch: </strong><%= @profile.watch %></li>
+        <li><strong>Watch hand (if you wear one): </strong><%= @profile.watch_hand %></li>
+        <li><strong>Shoulder slope: </strong><%= @profile.shoulder_slope %></li>
+        <li><strong>Measurement method: </strong><%= @profile.measurement_method %></li>
+    </div>
+
+    <%= link_to 'Edit', edit_user_profile_path %>
+

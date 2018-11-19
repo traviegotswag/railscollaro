@@ -1,0 +1,72 @@
+<h4>Editing your user profile</h4>
+<br>
+
+<%= form_with scope: :profile, url: user_profile_path, method: :patch, local: true, class: "custom-control" do |form| %>
+	<p class="custom-control">
+		<strong>What size do you wear for your Uniqlo shirts?</strong>
+		<br>
+			<%= form.radio_button(:size, "XS") %><%= form.label(:size, "XS") %>
+			<%= form.radio_button(:size, "S") %><%= form.label(:size, "S") %>
+			<%= form.radio_button(:size, "M") %><%= form.label(:size, "M") %>
+			<%= form.radio_button(:size, "L") %><%= form.label(:size, "L") %>
+			<%= form.radio_button(:size, "XL") %><%= form.label(:size, "XL") %>
+	</p>
+
+	<p class="custom-control">
+		<strong>What is your height?</strong>
+		<br>
+		<%= form.number_field(:height, in: 1.00..2.00, step: 0.01) %>metres
+	</p>
+
+	<p class="custom-control">
+		<strong>What is your weight?</strong>
+		<br>
+		<%= form.number_field(:weight, in: 40..200, step: 0.1) %>kg
+	</p>
+
+	<p class="custom-control">
+	<strong>How would you describe your midsection?</strong>
+	<br>
+		<%= form.radio_button(:belly, "No belly") %><%= form.label(:belly, "No belly") %>
+		<%= form.radio_button(:belly, "Small belly") %><%= form.label(:belly, "Small belly") %>
+		<%= form.radio_button(:belly, "Big belly") %><%= form.label(:belly, "Big belly") %>
+	</p>
+
+    <p class="custom-control">
+		<strong>Do you wear a watch?</strong>
+		<br>
+		<%= form.radio_button(:watch, "Yes") %><%= form.label(:watch, "Yes") %>
+		<%= form.radio_button(:watch, "No") %><%= form.label(:watch, "No") %>
+	</p>
+
+    <p class="custom-control">
+		<strong>If you wear a watch, on which hand do you wear your watch?</strong>
+		<br>
+		<%= form.radio_button(:watch_hand, "Left") %><%= form.label(:watch_hand, "Left") %>
+		<%= form.radio_button(:watch_hand, "Right") %><%= form.label(:watch_hand, "Right") %>
+	</p>
+
+    <p class="custom-control">
+		<strong>How sloping are your shoulders?</strong>
+		<br>
+		<%= form.radio_button(:shoulder_slope, "Small") %><%= form.label(:shoulder_slope, "Small") %>
+		<%= form.radio_button(:shoulder_slope, "Medium") %><%= form.label(:shoulder_slope, "Medium") %>
+		<%= form.radio_button(:shoulder_slope, "Large") %><%= form.label(:shoulder_slope, "Large") %>
+	</p>
+
+    <p class="custom-control">
+		<strong>How would you like your measurements to be generated?</strong>
+		<br>
+		<%= form.radio_button(:measurement_method, "Smart size") %><%= form.label(:measurement_method, "Smart Size") %>
+		<%= form.radio_button(:measurement_method, "Send shirt") %><%= form.label(:measurement_method, "Send in my shirt") %>
+		<%= form.radio_button(:measurement_method, "Measured in person") %><%= form.label(:measurement_method, "Measured in person") %>
+	</p>
+
+	<p class="custom-control">
+		<%= form.submit value="Submit" %>
+	</p>
+<% end %>
+
+<!--  to go back to the index action -->
+<%# <%= link_to 'Home Page', root_path %> 
+<%# add cloudinary later %>

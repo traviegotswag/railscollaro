@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_073837) do
+ActiveRecord::Schema.define(version: 2018_11_19_133553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "address", force: :cascade do |t|
+    t.text "street_address"
+    t.integer "postal_code"
+    t.integer "unit_number"
+    t.integer "contact_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_address_on_user_id"
+  end
 
   create_table "measurements", force: :cascade do |t|
     t.text "name"
@@ -98,10 +109,6 @@ ActiveRecord::Schema.define(version: 2018_11_18_073837) do
     t.text "watch_hand"
     t.text "shoulder_slope"
     t.text "measurement_method"
-    t.text "street_address"
-    t.integer "postal_code"
-    t.integer "unit_number"
-    t.integer "contact_number"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end

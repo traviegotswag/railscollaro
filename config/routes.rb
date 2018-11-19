@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   resources :users do
     # index/show needed?
-    resources :profiles, only: [:new, :create, :show, :edit]
-    resources :styles, only: [:new, :create, :show, :edit]
-    resources :measurements, only: [:new, :create, :show, :edit]
+    resources :profiles, only: [:new, :create, :show, :edit, :update]
+    resources :styles, only: [:new, :create, :show, :edit, :update]
+    resources :measurements, only: [:new, :create, :show, :edit, :update]
     resources :orders, only: [:index, :create] do 
         resources :order_items
       end

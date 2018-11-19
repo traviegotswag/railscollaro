@@ -67,3 +67,4 @@ gem 'devise'
 # Bootstrap for styling
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem "bootstrap_form", ">= 4.0.0"
