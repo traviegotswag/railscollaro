@@ -13,8 +13,7 @@ class Products < ActiveRecord::Migration[5.2]
       t.string :image_url_3
       t.string :image_url_4
       t.decimal :price, precision: 10, scale: 2  
-      t.timestamps
-      t.references :order_item 
+      t.timestamps 
     end
   end
 end

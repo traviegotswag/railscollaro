@@ -16,35 +16,44 @@ ActiveRecord::Schema.define(version: 2018_11_18_073837) do
   enable_extension "plpgsql"
 
   create_table "measurements", force: :cascade do |t|
+    t.text "name"
     t.integer "shoulder"
     t.integer "chest"
     t.integer "waist"
     t.integer "hips"
-    t.integer "shirtlength"
-    t.integer "sleevelength"
+    t.integer "shirt_length"
+    t.integer "sleeve_length"
     t.integer "elbow"
-    t.integer "leftcuff"
-    t.integer "rightcuff"
-    t.integer "cufflength"
-    t.integer "collarwidth"
+    t.integer "left_cuff"
+    t.integer "right_cuff"
+    t.integer "cuff_length"
+    t.integer "collar_width"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "order_item_id"
-    t.index ["order_item_id"], name: "index_measurements_on_order_item_id"
     t.index ["user_id"], name: "index_measurements_on_user_id"
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "order_id"
     t.decimal "unit_price", precision: 12, scale: 3
     t.integer "quantity"
     t.decimal "total_price", precision: 12, scale: 3
+    t.text "collar"
+    t.text "front"
+    t.text "cuff"
+    t.text "back"
+    t.text "monogram"
+    t.text "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.bigint "style_id"
+    t.bigint "measurement_id"
+    t.index ["measurement_id"], name: "index_order_items_on_measurement_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["product_id"], name: "index_order_items_on_product_id"
+    t.index ["style_id"], name: "index_order_items_on_style_id"
   end
 
   create_table "order_statuses", force: :cascade do |t|
@@ -59,8 +68,8 @@ ActiveRecord::Schema.define(version: 2018_11_18_073837) do
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "order_id"
-    t.index ["order_id"], name: "index_orders_on_order_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -78,8 +87,6 @@ ActiveRecord::Schema.define(version: 2018_11_18_073837) do
     t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "order_item_id"
-    t.index ["order_item_id"], name: "index_products_on_order_item_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -100,17 +107,16 @@ ActiveRecord::Schema.define(version: 2018_11_18_073837) do
   end
 
   create_table "styles", force: :cascade do |t|
+    t.text "name"
     t.text "collar"
     t.text "front"
     t.text "cuff"
     t.text "back"
     t.text "monogram"
-    t.text "remarks"
+    t.text "remark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "order_item_id"
-    t.index ["order_item_id"], name: "index_styles_on_order_item_id"
     t.index ["user_id"], name: "index_styles_on_user_id"
   end
 
@@ -126,6 +132,8 @@ ActiveRecord::Schema.define(version: 2018_11_18_073837) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "order_items", "measurements"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
+  add_foreign_key "order_items", "styles"
 end
