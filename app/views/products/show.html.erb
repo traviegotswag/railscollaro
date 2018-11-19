@@ -57,39 +57,6 @@
 </div>
 
 
-collar
-front
-cuff
-monogram
-back
-others
-                        <div class = "container">
-                            <%= form_with model: @order_item, url: user_order_order_items_path, local: true do |form| %>
-
-                            <p>
-                                <%= form.label :product_name, "Product Name" %><br>
-                                <%= form.text_field :product_name %>
-                            </p>
-
-                            <p>
-                                <%= form.label :price %><br>
-                                <%= form.text_field :price %>
-                            </p>
-
-                            <p>
-                                <%= form.label :description %><br>
-                                <%= form.text_area :description %>
-                            </p>
-
-                            <p>
-                                <%= form.submit, value = 'Add to Cart' %>
-                            </p>
-
-                            <% end %>
-                        </div>
-
-
-
 
 
 

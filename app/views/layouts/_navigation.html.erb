@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="navbar-brand" href="/">Collaro</li>
+          <li class="nav-item"><%= link_to 'Collaro', root_path, :class => "nav-link", :style => "color:black;" %></li>
           <li class="nav-item"><%= link_to 'Search', root_path, :class => "nav-link", :style => "color:black;" %></li>
         </ul>
       </div>
@@ -23,11 +23,11 @@
               <li class="nav-item"><%= link_to 'About Us', aboutus_path, :class => "nav-link", :style => "color:black;" %></li>
               <li class="nav-item"><%= link_to 'Cart', root_path, :class => "nav-link", :style => "color:black;" %></li>
               <% if current_user == nil %>
-                <li class="nav-item"><%= link_to "Login/Signup", new_user_session_path, :class => "nav-link", :style => "color:#FFFFFF;" %></li>
+                <li class="nav-item"><%= link_to "Login/Signup", new_user_session_path, :class => "nav-link", :style => "color:black;" %></li>
               <%# <li class="nav-item"><%= link_to 'Sign Up', new_user_registration_path, :class => "nav-link",:style => "color:#FFFFFF;" %>
               <% else %>
-                <span class="navbar-text" style="color:#FFFFFF;"><%= link_to 'Profile', user_path(current_user.id), :style => "color:#FFFFFF;" %></span>
-                <li class="nav-item"><%= link_to 'Logout', destroy_user_session_url, method: :delete, :class => "nav-link", :style => "color:#FFFFFF;" %></li>
+                <span class="navbar-text" style="color:#FFFFFF;"><%= link_to 'Profile', new_user_profile_path(current_user.id), :style => "color:black;" %></span>
+                <li class="nav-item"><%= link_to 'Logout', destroy_user_session_url, method: :delete, :class => "nav-link", :style => "color:black;" %></li>
             <% end %>
             </ul>
 

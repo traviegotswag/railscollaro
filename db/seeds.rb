@@ -12,9 +12,9 @@ Style.delete_all
 Style.create(name: "style-1", collar: "classic", front: "clean", cuff:"round", back:"clean", monogram:"none", remark:"soft collar")
 Style.create(name: "style-2", collar: "classic", front: "clean", cuff:"round", back:"clean", monogram:"none", remark:"stiff collar")
 
-Measurement.delete_all
-Measurement.create(name: "profile-1", shoulder: 17, chest: 37, waist:32, hips: 37, shirt_length: 28, sleeve_length: 26, elbow: 12, left_cuff: 10, right_cuff: 10, cuff_length: 2.5, collar_width: 15)
-Measurement.create(name: "profile-2", shoulder: 19, chest: 37, waist:32, hips: 37, shirt_length: 28, sleeve_length: 26, elbow: 12, left_cuff: 10, right_cuff: 10, cuff_length: 2.5, collar_width: 15)
+# Measurement.delete_all
+# Measurement.create(name: "profile-1", shoulder: 17, chest: 37, waist: 32, hips: 37, shirt_length: 28, sleeve_length: 26, elbow: 12, left_cuff: 10, right_cuff: 10, cuff_length: 2.5, collar_width: 15)
+# Measurement.create(name: "profile-2", shoulder: 19, chest: 37, waist: 32, hips: 37, shirt_length: 28, sleeve_length: 26, elbow: 12, left_cuff: 10, right_cuff: 10, cuff_length: 2.5, collar_width: 15)
 
 # OrderStatus.delete_all
 # OrderStatus.create! id: 1, name: "In Progress"

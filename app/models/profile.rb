@@ -1,4 +1,4 @@
-class Profile < ActiveRecord: 
+class Profile < ApplicationRecord
     
     belongs_to :user
     

@@ -9,7 +9,6 @@ class Styles < ActiveRecord::Migration[5.2]
       t.text :monogram, optional: true
       t.text :remark, optional: true
       t.timestamps
-      # references
       t.references :user
     end
   end

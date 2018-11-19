@@ -1,0 +1,52 @@
+<h1>Generating a smart size for your first shirt</h1>
+
+<%= form_with scope: :profile, url: user_profiles_path, local: true do |form| %>
+	<p>
+		<%= form.label :size %><br>
+		<%= form.text_field :size %>
+	</p>
+
+	<p>
+		<%= form.label :height %><br>
+		<%= form.text_field :height %>
+	</p>
+
+	<p>
+		<%= form.label :weight %><br>
+		<%= form.text_field :weight %>
+	</p>
+
+	<p>
+		<%= form.label :belly %><br>
+		<%= form.date_field :belly%>
+	</p>
+
+    <p>
+		<%= form.label :watch %><br>
+		<%= form.date_field :belly%>
+	</p>
+
+    <p>
+		<%= form.label :watch_hand %><br>
+		<%= form.date_field :watch_hand%>
+	</p>
+
+    <p>
+		<%= form.label :shoulder_slope %><br>
+		<%= form.date_field :shoulder_slope %>
+	</p>
+
+    <p>
+		<%= form.label :measurement_method %><br>
+		<%= form.date_field :measurement_method %>
+	</p>
+
+	<p>
+		<%= form.submit %>
+	</p>
+<% end %>
+
+<!--  to go back to the index action -->
+<%# <%= link_to 'Home Page', root_path %> %>
+
+<%# add cloudinary later %>
