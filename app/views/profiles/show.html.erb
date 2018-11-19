@@ -1,0 +1,9 @@
+ <%= form_with scope: :profile, url: user_profiles_path, local: true, class: "custom-control" do |form| %>
+ 
+ <h5>Profile Info</h5>
+        <div>
+            @profile.size
+            @profile.height
+        </div>
+
+<% end %>
