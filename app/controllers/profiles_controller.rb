@@ -2,9 +2,12 @@
 class ProfilesController < ApplicationController
 
       def new
+        @user = User.find(params[:user_id])
+        redirect_to user_profile_path(id: @user.profile.id) if @user.profile
+
         @profile = Profile.new
       end
-
+      
       def create 
         @profile = Profile.new(profile_params)
         @profile.user = current_user
@@ -14,12 +17,9 @@ class ProfilesController < ApplicationController
       end
     
       def show
-        if Profile.find_by_id(params[:id])
-            @profile = Profile.find(params[:id])
-        else
-            redirect_to new_user_profile_path
-        end
-        # @comments = Comment.where(product_id: params[:id])
+        @profile = Profile.find(params[:id])
+        @measurement1 = Measurement.where(user_id: current_user.id)[0]
+        @measurement2 = Measurement.where(user_id: current_user.id)[1]
       end
 
       def edit
