@@ -1,5 +1,4 @@
-class Measurement < ApplicationRecord
-    
+class Measurement < ApplicationRecord    
     belongs_to :user
-    belongs_to :order_item
+
 end

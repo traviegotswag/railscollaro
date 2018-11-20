@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   devise_for :users 
 
   resources :users do
-    # index/show needed?
     resources :profiles, only: [:new, :create, :show, :edit, :update]
-    resources :styles, only: [:new, :create, :show, :edit, :update]
     resources :measurements, only: [:new, :create, :show, :edit, :update]
+    # resources :styles, only: [:new, :create, :show, :edit, :update]
     resources :orders, only: [:index, :create] do 
         resources :order_items
       end
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
     
     #Product page
     resources :products, only: [:index, :show], param: :name
+
 
   # Sorting functions
   # resources :fabrictypecategories, only: [:index] do

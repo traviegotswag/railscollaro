@@ -10,7 +10,7 @@ class Profiles < ActiveRecord::Migration[5.2]
       t.text :shoulder_slope
       t.text :measurement_method
       # t.string :image_url
-      t.references :user
+      t.references :user, unique: true
     end
   end
 end 
