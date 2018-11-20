@@ -1,0 +1,83 @@
+<h5>STYLE SELECTION</h5>
+
+
+<div id="accordion">
+
+<%# NO 1 ------------------------------------------------------------------------------------%>
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Collar
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="m-2 d-inline-block">
+                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;">
+                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>""  %>
+            </div>
+
+            <div class="m-2 d-inline-block">
+                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;">
+                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>"" %>
+            </div>
+
+            <div class="m-2 d-inline-block">
+                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;">
+                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>"" %>
+            </div>
+
+            <div class="m-2 d-inline-block">
+                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;" checked>
+                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>"" %>
+            </div>
+            
+
+        </div>
+    </div>
+
+<%# NO 2 ------------------------------------------------------------------------------------%>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Cuff
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">Cuff 1</div>
+        <div class="card-body">Cuff 2</div>
+        <div class="card-body">Cuff 3</div>
+    </div>
+  </div>
+  
+<%# NO 3 ------------------------------------------------------------------------------------%>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Front
+                    </button>
+            </h5>
+        </div>
+
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">Front 1</div>
+            <div class="card-body">Front 2</div>
+            <div class="card-body">Front 3</div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<%# click customize, options appear %>
+<%# accordion %>
+<%# populate with images %>
+<%# 157.202.5 %>
+<%# add to cart %>
