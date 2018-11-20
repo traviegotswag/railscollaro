@@ -8,6 +8,8 @@
 		<%= form.text_field :name %>
 	</p>
 
+	<%# Error for Name: <%= measurement.errors[:apple] %> %>
+
     <p class="custom-control">
         <%= form.label :shoulder, "Shoulder" %>
 		<%= form.number_field(:shoulder, in: 20..60, step: 0.25) %>
