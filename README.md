@@ -124,17 +124,32 @@ Select style and measurements
 
 
 
+2nd NAV BAR
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><%= link_to 'Collaro', root_path, :class => "nav-link", :style => "color:black;" %></li>
+          <li class="nav-item"><%= link_to 'Search', root_path, :class => "nav-link", :style => "color:black;" %></li>
+        </ul>
+      </div>
+    </nav>
 
 
+Creating a button
+var restartGame = document.createElement('button');
 
+Insert Style
+        var checkCounter = document.getElementsByClassName('check')[0];
+        checkCounter.style.backgroundColor = "rgb(" + 240 + "," + 128 + "," + 128 + "," + 0.5 + ")";
+        checkCounter.style.color = "rgb(" + 129 + "," + 0 + "," + 0 + ")";
+        checkCounter.style.borderStyle = 'none';
 
+AddEventListener
+trueButton.addEventListener('click', responseHandler);
 
-
-
-
-
-
-
+AddClass
+newMonument.setAttribute('class', 'monumentsList');
 
 
 # README

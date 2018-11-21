@@ -9,8 +9,9 @@ class Profiles < ActiveRecord::Migration[5.2]
       t.text :watch_hand
       t.text :shoulder_slope
       t.text :measurement_method
-      # t.string :image_url
       t.references :user, unique: true
+      # inserting cloudinary/carrier wave
     end
   end
 end 
+

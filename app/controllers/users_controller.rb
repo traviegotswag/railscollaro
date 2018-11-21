@@ -1,13 +1,10 @@
-# class UsersController < ApplicationController
+class UsersController < ApplicationController
 
-#     def show
-#       if current_user
-#           @user = User.find(params[:id])
-#       else 
-#         redirect_to new_user_session_path
-#       end
-#     end
-  
-  
-    
-#   end
+    def show
+        @user = current_user
+        @profile = Profile.find_by(id: @user.profile.id)
+        @measurement1 = Measurement.where(user_id: current_user.id)[0]
+        @measurement2 = Measurement.where(user_id: current_user.id)[1]
+    end
+
+end 

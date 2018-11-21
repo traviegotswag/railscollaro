@@ -1,0 +1,71 @@
+<div class = "container-fluid">
+    <div class = "container">
+    <h3>Your profile information</h3>
+        <div class="row">
+        <%# item photo should be manipulated later %>
+        
+			<div class="col-xs-4 mx-auto">
+                <h5>Your Shirt Profile Information</h5>
+                <li><strong>Shirt Size: </strong><%= @profile.size %></li>
+                <li><strong>Weight: </strong><%= @profile.weight %>kg</li>
+                <li><strong>Height: </strong><%= @profile.height %>metres</li>
+                <li><strong>Mid-section: </strong><%= @profile.belly %></li>
+                <li><strong>Wears watch: </strong><%= @profile.watch %></li>
+                <li><strong>Watch hand (if you wear one): </strong><%= @profile.watch_hand %></li>
+                <li><strong>Shoulder slope: </strong><%= @profile.shoulder_slope %></li>
+                <li><strong>Measurement method: </strong><%= @profile.measurement_method %></li>
+
+                <%= link_to 'Edit', edit_user_profile_path(user_id: @user.id) %>
+
+                <hr>
+                <% if @measurement2 == nil %>
+                    <button><%= link_to 'Create your shirt measurements profile', new_user_measurement_path(current_user.id) %></button>
+                <% end %>
+            </div>
+
+            <% if @measurement1 != nil %>
+                <div class="col-xs-4 mx-auto">
+                    <h5>Measurement Profile 1</h5>
+                    <li><strong>Name: </strong><%= @measurement1.name %></li>
+                    <li><strong>Shoulder: </strong><%= @measurement1.shoulder %></li>
+                    <li><strong>Chest: </strong><%= @measurement1.chest %>kg</li>
+                    <li><strong>Waist: </strong><%= @measurement1.waist %>metres</li>
+                    <li><strong>Hips: </strong><%= @measurement1.hips %></li>
+                    <li><strong>Shirt Length: </strong><%= @measurement1.shirt_length %></li>
+                    <li><strong>Sleeve length: </strong><%= @measurement1.sleeve_length %></li>
+                    <li><strong>Elbow: </strong><%= @measurement1.elbow %></li>
+                    <li><strong>Left Cuff: </strong><%= @measurement1.left_cuff %></li>
+                    <li><strong>Right Cuff: </strong><%= @measurement1.right_cuff %></li>
+                    <li><strong>Cuff Length: </strong><%= @measurement1.cuff_length %></li>
+                    <li><strong>Collar Width: </strong><%= @measurement1.collar_width %></li>
+
+                    <%= link_to 'Edit', edit_user_measurement_path(user_id: current_user.id, id: @measurement1.id) %>
+                    <hr>
+
+                    <% if @measurement2 != nil %>
+                        <div class="col-xs-4 mx-auto">
+                            <h5>Measurement Profile 2</h5>
+                            <li><strong>Name: </strong><%= @measurement2.name %></li>
+                            <li><strong>Shoulder: </strong><%= @measurement2.shoulder %></li>
+                            <li><strong>Chest: </strong><%= @measurement2.chest %>kg</li>
+                            <li><strong>Waist: </strong><%= @measurement2.waist %>metres</li>
+                            <li><strong>Hips: </strong><%= @measurement2.hips %></li>
+                            <li><strong>Shirt Length: </strong><%= @measurement2.shirt_length %></li>
+                            <li><strong>Sleeve length: </strong><%= @measurement2.sleeve_length %></li>
+                            <li><strong>Elbow: </strong><%= @measurement2.elbow %></li>
+                            <li><strong>Left Cuff: </strong><%= @measurement2.left_cuff %></li>
+                            <li><strong>Right Cuff: </strong><%= @measurement2.right_cuff %></li>
+                            <li><strong>Cuff Length: </strong><%= @measurement2.cuff_length %></li>
+                            <li><strong>Collar Width: </strong><%= @measurement2.collar_width %></li>
+
+                            <%= link_to 'Edit', edit_user_measurement_path(user_id: current_user.id, id: @measurement2.id) %>
+                        </div>
+                    <% end %>
+            
+                </div>
+            <% end %>
+
+        <div>
+    <div>
+<div>
+

@@ -1,4 +1,3 @@
-
 class ProfilesController < ApplicationController
 
       def new
@@ -12,12 +11,14 @@ class ProfilesController < ApplicationController
         @profile = Profile.new(profile_params)
         @profile.user = current_user
         @profile.save
-        # flash[:success] = "Profile has been created successfully."
-        redirect_to user_profile_path(user_id: current_user.id, id: @profile.id)
+        flash[:success] = "Profile created!"
+        redirect_to user_path(id: current_user.id)
       end
     
       def show
-        @profile = Profile.find(params[:id])
+        # @profile = Profile.find(params[:id])
+        @user = current_user
+        @profile = Profile.find_by(id: @user.profile.id)
         @measurement1 = Measurement.where(user_id: current_user.id)[0]
         @measurement2 = Measurement.where(user_id: current_user.id)[1]
       end

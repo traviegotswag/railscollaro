@@ -11,6 +11,7 @@ class MeasurementsController < ApplicationController
         @measurement = Measurement.new(measurement_params)
         @measurement.user = current_user
         @measurement.save
+        # flash[:success] = "Success!"
         redirect_to user_profile_path(user_id: current_user.id, id: @measurement.user.profile.id)
     end
   

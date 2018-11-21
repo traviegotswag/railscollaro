@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
     end
     
     def show
+        @user = current_user
         @product = Product.find_by(name: params[:name])
     end 
 end
