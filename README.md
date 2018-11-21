@@ -126,10 +126,16 @@ Select style and measurements
 
 
 
+2nd NAV BAR
 
-
-
-
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><%= link_to 'Collaro', root_path, :class => "nav-link", :style => "color:black;" %></li>
+          <li class="nav-item"><%= link_to 'Search', root_path, :class => "nav-link", :style => "color:black;" %></li>
+        </ul>
+      </div>
+    </nav>
 
 
 

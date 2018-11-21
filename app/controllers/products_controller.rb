@@ -3,9 +3,11 @@ class ProductsController < ApplicationController
 
     def index
         @products = Product.all
+        @order_item = current_order.order_items.new
     end
     
     def show
+        @user = current_user
         @product = Product.find_by(name: params[:name])
     end 
 end

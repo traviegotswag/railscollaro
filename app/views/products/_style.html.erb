@@ -1,5 +1,6 @@
 <h5>STYLE SELECTION</h5>
 
+<%= form_with scope: :order_item, url: user_order_items_path(user_id: current_user.id), method: :post, local: true do |form| %>
 
 <div id="accordion">
 
@@ -15,7 +16,8 @@
 
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="m-2 d-inline-block">
-                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;">
+                <%= form.radio_button(:collar, "Classic Buttondown") %>
+                <%# <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;"> %>
                 <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>""  %>
             </div>
 
@@ -75,6 +77,7 @@
 
 </div>
 
+<% end %>
 
 <%# click customize, options appear %>
 <%# accordion %>

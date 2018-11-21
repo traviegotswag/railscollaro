@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     resources :profiles, only: [:new, :create, :show, :edit, :update]
     resources :measurements, only: [:new, :create, :show, :edit, :update]
     # resources :styles, only: [:new, :create, :show, :edit, :update]
-    resources :orders, only: [:index, :create] do 
-        resources :order_items
-      end
+    # resource :cart, only: [:show]
+    resources :order_items, only: [:create, :update, :destroy] 
+    # do
+    #   resources :orders
+    #   end
   end 
 
     # Home page
@@ -23,7 +25,8 @@ Rails.application.routes.draw do
     #Product page
     resources :products, only: [:index, :show], param: :name
 
-
+    #cart page
+    resource :cart, only: [:show]
   # Sorting functions
   # resources :fabrictypecategories, only: [:index] do
   #   resources :products, only: [:index]

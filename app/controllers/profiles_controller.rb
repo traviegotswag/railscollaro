@@ -1,4 +1,3 @@
-
 class ProfilesController < ApplicationController
 
       def new
@@ -12,8 +11,8 @@ class ProfilesController < ApplicationController
         @profile = Profile.new(profile_params)
         @profile.user = current_user
         @profile.save
-        # flash[:success] = "Profile has been created successfully."
-        redirect_to user_profile_path(user_id: current_user.id, id: @profile.id)
+        flash[:success] = "Profile created!"
+        redirect_to user_path(user_id: current_user.id)
       end
     
       def show
