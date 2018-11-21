@@ -81,21 +81,21 @@
                     <%= form.radio_button :cuff, "barrel_round_cuffs", :checked => true, :style => "opacity: 0; width: 0; height: 0;" %>
                     <%= image_tag "styleicons/cuffs_round", :style => "max-width: 125px; max-height: 125px;"  %>
                     <br>
-                    <%= form.label :cuff, "Collar" %>
+                    <%= form.label :cuff, "Round Barrel " %>
                 </div>
 
                 <div class="m-2">
                     <%= form.radio_button :cuff, "barrel_angle_cuffs", :style => "opacity: 0; width: 0; height: 0;" %>
                     <%= image_tag "styleicons/cuffs_angled", :style => "max-width: 125px; max-height: 125px;" %>
                     <br>
-                    <%= form.label :cuff, "Collar" %>
+                    <%= form.label :cuff, "Angled Barrel" %>
                 </div>
 
                 <div class="m-2 ">
                     <%= form.radio_button :cuff, "french_round_cuffs", :style => "opacity: 0; width: 0; height: 0;" %>
                     <%= image_tag "styleicons/cuffs_french_round", :style => "max-width: 125px; max-height: 125px;" %>
                     <br>
-                    <%= form.label :cuff, "Collar" %>
+                    <%= form.label :cuff, "French Round" %>
                 </div>
 
             </div>
@@ -104,27 +104,133 @@
   
 <%# NO 3 ------------------------------------------------------------------------------------%>
 
+    <div class="card">
+        <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <h5 class="mb-0">
+                <a class="btn btn-link collapsed">Front</a>
+            </h5>
+        </div>
 
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="d-flex flex-wrap">
+                <div class="m-2">
+                    <%= form.radio_button :front, "front_clean", :checked => true, :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/front_clean", :style => "max-width: 125px; max-height: 125px;"  %>
+                    <br>
+                    <%= form.label :front, "Clean" %>
+                </div>
+
+                <div class="m-2">
+                    <%= form.radio_button :front, "front_placket", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/front_placket", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :front, "Placket" %>
+                </div>
+
+                <div class="m-2 ">
+                    <%= form.radio_button :front, "front_concealed", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/front_concealed", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :front, "Concealed" %>
+                </div>
+
+            </div>
+        </div>    
+    </div>
 
 
 <%# NO 4 ------------------------------------------------------------------------------------%>
+    
+    <div class="card">
+        <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <h5 class="mb-0">
+                <a class="btn btn-link collapsed">Back</a>
+            </h5>
+        </div>
 
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="d-flex flex-wrap">
+                <div class="m-2">
+                    <%= form.radio_button :back, "back_clean", :checked => true, :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/back_clean", :style => "max-width: 125px; max-height: 125px;"  %>
+                    <br>
+                    <%= form.label :back, "Clean" %>
+                </div>
 
+                <div class="m-2">
+                    <%= form.radio_button :back, "back_side_pleats", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/back_side_pleats", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :back, "Side Pleats" %>
+                </div>
 
+                <div class="m-2 ">
+                    <%= form.radio_button :back, "back_box_pleats", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/back_box_pleats", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :back, "Box Pleat" %>
+                </div>
+            </div>
+        </div>    
+    </div>
 
 <%# NO 5 ------------------------------------------------------------------------------------%>
-    
 
+    <div class="card">
+        <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            <h5 class="mb-0">
+                <a class="btn btn-link collapsed">Monogram</a>
+            </h5>
+        </div>
 
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+            <div class="d-flex flex-wrap">
+                <div class="m-2">
+                    <%= form.radio_button :monogram, "monogram_none", :checked => true, :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/monogram_none", :style => "max-width: 125px; max-height: 125px;"  %>
+                    <br>
+                    <%= form.label :monogram, "None" %>
+                </div>
 
+                <div class="m-2">
+                    <%= form.radio_button :monogram, "monogram_collar", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/monogram_collar", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :monogram, "Inner Collar" %>
+                </div>
+
+                <div class="m-2 ">
+                    <%= form.radio_button :monogram, "monogram_left_cuff", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/monogram_left_cuff", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :monogram, "Left Cuff" %>
+                </div>
+
+                <div class="m-2 ">
+                    <%= form.radio_button :monogram, "monogram_right_cuff", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/monogram_right_cuff", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :monogram, "Right Cuff" %>
+                </div>
+                
+            </div>
+        </div>    
+    </div>
 
 </div>
-            <br>
-            <%= form.submit(value:"Add to Cart") %>
+        <span>Remarks: <%= form.text_field :remark %></span>
+        <br>
+        <span>Quantity: <%= form.number_field :quantity %></span>
+        <br>
+		<span><%= form.label "Select your measurement" %></span>
+        <br>
+		<%= form.collection_select :measurement_id, Measurement.where(user_id: current_user.id), :id, :name, prompt: true%>
+        <br>
+        <%= form.hidden_field :unit_price, value: @product.price %>
+        <br>
+        <%= form.submit(value:"Add to Cart") %>
 <% end %>
 
 <%# click customize, options appear %>
-<%# accordion %>
-<%# populate with images %>
 <%# 157.202.5 %>
-<%# add to cart %>
+

@@ -24,7 +24,6 @@ class OrderItem < ApplicationRecord
     unit_price * quantity
   end
 
-
   private
     def product_present
       if product.nil?
