@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :measurements, only: [:new, :create, :show, :edit, :update]
     # resources :styles, only: [:new, :create, :show, :edit, :update]
     # resource :cart, only: [:show]
-    resources :order_items, only: [:create, :update, :destroy] 
+    
     # do
     #   resources :orders
     #   end
@@ -21,12 +21,17 @@ Rails.application.routes.draw do
     get '/howitworks', to: 'pages#howitworks'
     get '/styleguide', to: 'pages#styleguide'
     get '/nailingyourfit', to: 'pages#nailingyourfit'
-    
+  
     #Product page
     resources :products, only: [:index, :show], param: :name
 
-    #cart page
-    resource :cart, only: [:show]
+    #Cart page
+    resource :order, only: [:show]
+
+    #Order items within cart/ SHOULD IT BE WITHIN USERS
+    resources :order_items, only: [:create, :update, :destroy] 
+
+    
   # Sorting functions
   # resources :fabrictypecategories, only: [:index] do
   #   resources :products, only: [:index]

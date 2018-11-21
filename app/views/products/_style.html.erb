@@ -1,82 +1,126 @@
 <h5>STYLE SELECTION</h5>
 
-<%= form_with scope: :order_item, url: user_order_items_path(user_id: current_user.id), method: :post, local: true do |form| %>
+<%= form_with scope: :order_item, url: order_items_path, method: :post, local: true do |form| %>
 
 <div id="accordion">
 
 <%# NO 1 ------------------------------------------------------------------------------------%>
     <div class="card">
-        <div class="card-header" id="headingOne">
+        <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Collar
-                </button>
+                <a class="btn btn-link">Collar</a>
             </h5>
         </div>
 
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="m-2 d-inline-block">
-                <%= form.radio_button(:collar, "Classic Buttondown") %>
-                <%# <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;"> %>
-                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>""  %>
-            </div>
+            <div class="d-flex flex-wrap">
+                <div class="m-2">
+                    <%= form.radio_button :collar, "classic", :checked => true, :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/collar_classic", :style => "max-width: 125px; max-height: 125px;", :class =>"" %>
+                    <br>
+                    <%= form.label :collar, "Classic" %>
+                </div>
+        
+                <div class="m-2">
+                    <%= form.radio_button :collar, "classic_buttondown", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 125px; max-height: 125px;", :class =>"" %>
+                    <br>
+                    <%= form.label :collar, "Buttondown" %>
+                </div>
+                
+                <div class="m-2">
+                    <%= form.radio_button :collar, "spread", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/collar_spread", :style => "max-width: 125px; max-height: 125px;", :class =>"" %>
+                    <br>
+                    <%= form.label :collar, "Spread" %>
+                </div>
 
-            <div class="m-2 d-inline-block">
-                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;">
-                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>"" %>
-            </div>
+                <div class="m-2">
+                    <%= form.radio_button :collar, "wide_spread", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/collar_wide_spread", :style => "max-width: 125px; max-height: 125px;", :class =>"" %>
+                    <br>
+                    <%= form.label :collar, "Wide Spread" %>
+                </div>
 
-            <div class="m-2 d-inline-block">
-                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;">
-                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>"" %>
-            </div>
+                <div class="m-2">
+                    <%= form.radio_button :collar, "cutaway", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/collar_cutaway", :style => "max-width: 125px; max-height: 125px;", :class =>"" %>
+                    <br>
+                    <%= form.label :collar, "Cutaway" %>
+                </div>
 
-            <div class="m-2 d-inline-block">
-                <input type="radio" value="small" style="position: absolute; opacity: 0; width: 0; height: 0;" checked>
-                <%= image_tag "styleicons/collar_classic_buttondown", :style => "max-width: 140px; max-height: 140px;", :class =>"" %>
-            </div>
-            
+                <div class="m-2">
+                    <%= form.radio_button :collar, "mandarin", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/collar_mandarin", :style => "max-width: 125px; max-height: 125px;", :class =>"" %>
+                    <br>
+                    <%= form.label :collar, "mandarin" %>
+                </div>
 
+                <div class="m-2">
+                    <%= form.radio_button :collar, "one_piece", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/collar_one_piece", :style => "max-width: 125px; max-height: 125px;", :class =>"" %>
+                    <br>
+                    <%= form.label :collar, "One Piece" %>
+                </div>
+
+            </div>
         </div>
     </div>
 
 <%# NO 2 ------------------------------------------------------------------------------------%>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Cuff
-        </button>
-      </h5>
-    </div>
-
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-        <div class="card-body">Cuff 1</div>
-        <div class="card-body">Cuff 2</div>
-        <div class="card-body">Cuff 3</div>
-    </div>
-  </div>
-  
-<%# NO 3 ------------------------------------------------------------------------------------%>
     <div class="card">
-        <div class="card-header" id="headingThree">
+        <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             <h5 class="mb-0">
-                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Front
-                    </button>
+                <a class="btn btn-link collapsed">Cuff</a>
             </h5>
         </div>
 
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-            <div class="card-body">Front 1</div>
-            <div class="card-body">Front 2</div>
-            <div class="card-body">Front 3</div>
-        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="d-flex flex-wrap">
+                <div class="m-2">
+                    <%= form.radio_button :cuff, "barrel_round_cuffs", :checked => true, :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/cuffs_round", :style => "max-width: 125px; max-height: 125px;"  %>
+                    <br>
+                    <%= form.label :cuff, "Collar" %>
+                </div>
+
+                <div class="m-2">
+                    <%= form.radio_button :cuff, "barrel_angle_cuffs", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/cuffs_angled", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :cuff, "Collar" %>
+                </div>
+
+                <div class="m-2 ">
+                    <%= form.radio_button :cuff, "french_round_cuffs", :style => "opacity: 0; width: 0; height: 0;" %>
+                    <%= image_tag "styleicons/cuffs_french_round", :style => "max-width: 125px; max-height: 125px;" %>
+                    <br>
+                    <%= form.label :cuff, "Collar" %>
+                </div>
+
+            </div>
+        </div>    
     </div>
+  
+<%# NO 3 ------------------------------------------------------------------------------------%>
+
+
+
+
+<%# NO 4 ------------------------------------------------------------------------------------%>
+
+
+
+
+<%# NO 5 ------------------------------------------------------------------------------------%>
+    
+
+
 
 
 </div>
-
+            <br>
+            <%= form.submit(value:"Add to Cart") %>
 <% end %>
 
 <%# click customize, options appear %>

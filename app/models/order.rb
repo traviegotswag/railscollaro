@@ -7,7 +7,7 @@ class Order < ApplicationRecord
     has_many :order_items
     before_create :set_order_status
     before_save :update_subtotal
-  
+
     def subtotal
       order_items.collect { |orderitem| orderitem.valid? ? (orderitem.quantity * orderitem.unit_price) : 0 }.sum
     end

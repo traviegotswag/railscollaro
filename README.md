@@ -124,8 +124,6 @@ Select style and measurements
 
 
 
-
-
 2nd NAV BAR
 
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -138,9 +136,20 @@ Select style and measurements
     </nav>
 
 
+Creating a button
+var restartGame = document.createElement('button');
 
+Insert Style
+        var checkCounter = document.getElementsByClassName('check')[0];
+        checkCounter.style.backgroundColor = "rgb(" + 240 + "," + 128 + "," + 128 + "," + 0.5 + ")";
+        checkCounter.style.color = "rgb(" + 129 + "," + 0 + "," + 0 + ")";
+        checkCounter.style.borderStyle = 'none';
 
+AddEventListener
+trueButton.addEventListener('click', responseHandler);
 
+AddClass
+newMonument.setAttribute('class', 'monumentsList');
 
 
 # README
