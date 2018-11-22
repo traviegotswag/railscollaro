@@ -4,62 +4,62 @@
 <%= form_with scope: :measurement, url: user_measurements_path, local: true, class: "custom-control" do |form| %>
 
     <p class="form-group row">
-        <%= form.label :name, "Name" %>
+        <%= form.label :name, "1. Name" %>
 		<%= form.text_field :name %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :shoulder, "Shoulder" %>
+        <%= form.label :shoulder, "2. Shoulder" %>
 		<%= form.number_field(:shoulder, in: 20..60, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :waist, "Waist" %>
+        <%= form.label :waist, "3. Waist" %>
 		<%= form.number_field(:waist, in: 20..60, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :chest, "Chest" %>
+        <%= form.label :chest, "4. Chest" %>
 		<%= form.number_field(:chest, in: 20..60, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :hips, "Hips" %>
+        <%= form.label :hips, "5. Hips" %>
 		<%= form.number_field(:hips, in: 20..60, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :shirt_length, "Shirt Length" %>
+        <%= form.label :shirt_length, "6. Shirt Length" %>
 		<%= form.number_field(:shirt_length, in: 16..40, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :sleeve_length, "Sleeve Length" %>
+        <%= form.label :sleeve_length, "7. Sleeve Length" %>
 		<%= form.number_field(:sleeve_length, in: 14..36, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :elbow, "Elbow" %>
+        <%= form.label :elbow, "8. Elbow" %>
 		<%= form.number_field(:elbow, in: 8..28, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :left_cuff, "Left Cuff" %>
+        <%= form.label :left_cuff, "9. Left Cuff" %>
 		<%= form.number_field(:left_cuff, in: 8..18, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :right_cuff, "Right Cuff" %>
+        <%= form.label :right_cuff, "10. Right Cuff" %>
 		<%= form.number_field(:left_cuff, in: 8..18, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :cuff_length, "Cuff Length" %>
+        <%= form.label :cuff_length, "11. Cuff Length" %>
 		<%= form.number_field(:cuff_length, in: 1..3.5, step: 0.25) %>
 	</p>
 
     <p class="form-group row">
-        <%= form.label :collar_width, "Collar Width" %>
+        <%= form.label :collar_width, "12. Collar Width" %>
 		<%= form.number_field(:collar_width, in: 10..28, step: 0.25) %>
 	</p>
 

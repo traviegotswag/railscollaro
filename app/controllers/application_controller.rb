@@ -4,10 +4,13 @@ class ApplicationController < ActionController::Base
     
     # order has order status, so for example 0/1/2 => ["pending", "paid", "completed"]
     # find all of a users orders, if he has no "pending", create a new one for him
-    def current_order    
-      @order = Order.find_existing_order(current_user) 
-    #   what is find_existing_order?
-      @order ? @order : Order.create(user: current_user)
+    def current_order
+      @user = current_user
+      if @user    
+        @order = Order.find_existing_order(current_user) 
+      #   what is find_existing_order?
+        @order ? @order : Order.create(user: current_user)
+      end
     end
 end
 

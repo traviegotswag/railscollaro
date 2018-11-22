@@ -14,33 +14,30 @@
       There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
     </p>
   <% else %>
+    <h2 class="pt-4 pb-2 ml-4">Your Cart</h2>
     <% @order_items.each do |order_item| %>
       <%# <%= render 'orders/order_row', product: order_item.product, order_item: order_item, show_total: true %> 
       <%# <h5><%= order_item.image_url%>
       <div class="container offset-2 mx-auto">
-        <h2 class="pt-4 pb-2">Your Cart</h2>
-          <hr>
         <div class="row">
             <div class="col-4 offset-2">
               <span><strong>Name: </strong><%= order_item.name%></span><br>
               <span><strong>Unit Price: </strong><%= number_to_currency(order_item.unit_price) %></span><br>
               <span><strong>Quantity: </strong><%= order_item.quantity %></span><br>
               <br>
-              <br>
               <span><strong>Subtotal: </strong><%= number_to_currency(order_item.total_price) %></span><br>
+              <button class="bg-light border-0 mt-2"><%= link_to 'Delete', order_item_path(@order_item),
+                                method: :delete,
+                                data: { confirm: 'Yo, you sure you want to delete this measurement profile?' } %></button>
             </div>
 
             <div class="col-4">
                 <%= image_tag order_item.image_url, :style => "max-width: 150px; max-height: 150px;", :class => "d-inline-block float-right" %>
             </div>
         </div>
-        <hr>
-        <a href="https://www.paypal.com/login"><%= image_tag "checkout", :style => "width:250px" %></a>
-        
+        <hr>        
       </div>
-
-
-      
     <% end %>
     <%# calculate subtotal %>
+    <a href="https://www.paypal.com/login"><%= image_tag "checkout", :class => "d-block mx-auto", :style => "width:250px" %></a>
 <% end %>

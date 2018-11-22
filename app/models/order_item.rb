@@ -3,7 +3,6 @@ class OrderItem < ApplicationRecord
   belongs_to :order
 
   has_one :measurement
-  # does this make sense?
   # has_one :style
 
   validates :quantity, presence: true, numericality: { only_intrailseger: true, greater_than: 0 }
@@ -14,7 +13,6 @@ class OrderItem < ApplicationRecord
 
   def unit_price
     if persisted?
-      # 
       self[:unit_price]
     else
       product.price

@@ -2,19 +2,20 @@
     <div class = "container">
         <div class="row">
         <%# item photo should be manipulated later %>
-			<div class="col-xs-5 item-photo">
+			<div class="col-md-5">
             <%# fix the max-width problem %>
-                <%= image_tag @product.image_url_1, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid d-inline-block" %>
-                <%# <%= image_tag @product.image_url_2, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid d-inline-block" %>
-                <%# <%= image_tag @product.image_url_3, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid d-inline-block" %> 
+                <div style="max-width: 600px;">
+                    <%= image_tag @product.image_url_2, :class => "img-fluid d-inline-block pt-2 mt-4 pr-2 pb-2" %>
+                    <%= image_tag @product.image_url_1, :class => "img-fluid d-inline-block pr-2 mt-2 pb-2" %>
+                    <%= image_tag @product.image_url_3, :class => "img-fluid d-inline-block pr-2 mt-2 pb-2" %>
+                </div>
             </div>
 
-            <div class="col-xs-7" style="border:0px solid white">
-                	</br>
+            <div class="col-md-7" style="border:0px solid white">
                 <div class="card-body text-dark" style="max-width: 40rem;">
 					<div class="card-header bg-transparent">
-						<h3 class="d-inline"><%= @product.name %></h3>
-                        <h4 class="d-inline float-right">SGD<%= number_to_currency(@product.price, delimiter: ", ") %></h4>
+						<h4 class="d-inline"><%= @product.name %></h4>
+                        <h4 class="d-inline float-right"><%= number_to_currency(@product.price, delimiter: ", ") %></h4>
 					</div>
                     
                     <div class="card-body bg-transparent mb-0">
@@ -45,11 +46,10 @@
 
                     <div>
                     <%# CREATE 2 ROUTES %>
-                        <button type="button" class="btn btn-primary d-inline"><%= link_to 'Get Fabric Sample', root_path, :style => 'color:#FFFFFF' %></button>
-                        <button type="button" class="btn btn-primary d-inline"><%= link_to 'Customise Shirt', root_path, :style => 'color:#FFFFFF' %></button>
+                        <%# <button type="button" class="btn btn-primary d-inline"><%= link_to 'Get Fabric Sample', root_path, :style => 'color:#FFFFFF' %>
+                        <%# <button type="button" class="btn btn-primary d-inline"><%= link_to 'Customise Shirt', root_path, :style => 'color:#FFFFFF' %>
 
-                    </div>
-                    <br>                  
+                    </div>                
                     <hr>
                     <%= render 'products/style', product: @product, user: @user %>
                     
