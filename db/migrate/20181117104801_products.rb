@@ -2,6 +2,7 @@ class Products < ActiveRecord::Migration[5.2]
   def change
     create_table :products do |t|
       t.text :name
+      t.decimal :price, precision: 10, scale: 2  
       t.text :description
       t.text :color
       t.text :brand
@@ -12,7 +13,6 @@ class Products < ActiveRecord::Migration[5.2]
       t.string :image_url_2
       t.string :image_url_3
       t.string :image_url_4
-      t.decimal :price, precision: 10, scale: 2  
       t.timestamps 
     end
   end

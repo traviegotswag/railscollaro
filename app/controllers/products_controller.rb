@@ -8,6 +8,10 @@ class ProductsController < ApplicationController
     def show
         @user = current_user
         @product = Product.find_by(name: params[:name])
+
+        if @user 
+            @measurement = Measurement.where(user_id: @user.id)
+        end 
     end 
 end
 

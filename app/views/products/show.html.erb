@@ -4,7 +4,9 @@
         <%# item photo should be manipulated later %>
 			<div class="col-xs-5 item-photo">
             <%# fix the max-width problem %>
-                <%= image_tag @product.image_url_2, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid" %>
+                <%= image_tag @product.image_url_1, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid d-inline-block" %>
+                <%# <%= image_tag @product.image_url_2, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid d-inline-block" %>
+                <%# <%= image_tag @product.image_url_3, :style => "max-width: 500px; max-height: 500px;", :class => "img-fluid d-inline-block" %> 
             </div>
 
             <div class="col-xs-7" style="border:0px solid white">
@@ -49,7 +51,8 @@
                     </div>
                     <br>                  
                     <hr>
-                    <%= render 'products/style', product: @product %>
+                    <%= render 'products/style', product: @product, user: @user %>
+                    
                 </div>
                 
             

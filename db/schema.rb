@@ -59,12 +59,10 @@ ActiveRecord::Schema.define(version: 2018_11_19_133553) do
     t.datetime "updated_at", null: false
     t.bigint "product_id"
     t.bigint "order_id"
-    t.bigint "style_id"
     t.bigint "measurement_id"
     t.index ["measurement_id"], name: "index_order_items_on_measurement_id"
     t.index ["order_id"], name: "index_order_items_on_order_id"
     t.index ["product_id"], name: "index_order_items_on_product_id"
-    t.index ["style_id"], name: "index_order_items_on_style_id"
   end
 
   create_table "order_statuses", force: :cascade do |t|
@@ -74,17 +72,20 @@ ActiveRecord::Schema.define(version: 2018_11_19_133553) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "subtotal"
-    t.integer "shippingfee"
+    t.decimal "subtotal", precision: 10, scale: 2
+    t.decimal "shippingfee", precision: 10, scale: 2
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "order_status_id"
+    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
     t.text "name"
+    t.decimal "price", precision: 10, scale: 2
     t.text "description"
     t.text "color"
     t.text "brand"
@@ -95,7 +96,6 @@ ActiveRecord::Schema.define(version: 2018_11_19_133553) do
     t.string "image_url_2"
     t.string "image_url_3"
     t.string "image_url_4"
-    t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -139,8 +139,6 @@ ActiveRecord::Schema.define(version: 2018_11_19_133553) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "order_items", "measurements"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
-  add_foreign_key "order_items", "styles"
 end

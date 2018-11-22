@@ -222,13 +222,17 @@
         <br>
         <span>Quantity: <%= form.number_field :quantity %></span>
         <br>
-		<span><%= form.label "Select your measurement" %></span>
+        <% if @user && @measurement %>
+        	<span><%= form.label "Select your measurement" %></span>
+            <br>
+            <%# what does this syntax mean? %>
+		    <%= form.collection_select :measurement_id, Measurement.where(user_id: current_user.id), :id, :name, prompt: true%>
+        <%# <%= form.hidden_field :unit_price, value: @product.price %> 
+        <% end %>
         <br>
-		<%= form.collection_select :measurement_id, Measurement.where(user_id: current_user.id), :id, :name, prompt: true%>
-        <br>
-        <%= form.hidden_field :unit_price, value: @product.price %>
         <br>
         <%= form.submit(value:"Add to Cart") %>
+
 <% end %>
 
 <%# click customize, options appear %>

@@ -7,8 +7,8 @@ class OrderItem < ApplicationRecord
   # has_one :style
 
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validate :product_present
-  validate :order_present
+  # validate :product_present
+  # validate :order_present
 
   before_save :finalize
 
@@ -26,16 +26,16 @@ class OrderItem < ApplicationRecord
 
   private
     def product_present
-      if product.nil?
-        errors.add(:product, "is not valid or is not active.")
-      end
-    end
+    #   if product.nil?
+    #     errors.add(:product, "is not valid or is not active.")
+    #   end
+    # end
 
-    def order_present
-      if order.nil?
-        errors.add(:order, "is not a valid order.")
-      end
-    end
+    # def order_present
+    #   if order.nil?
+    #     errors.add(:order, "is not a valid order.")
+    #   end
+    # end
 
     def finalize
       self[:unit_price] = unit_price

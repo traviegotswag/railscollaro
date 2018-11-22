@@ -12,7 +12,7 @@ class MeasurementsController < ApplicationController
         @measurement.user = current_user
         @measurement.save
         # flash[:success] = "Success!"
-        redirect_to user_profile_path(user_id: current_user.id, id: @measurement.user.profile.id)
+        redirect_to user_path(id: current_user.id)
     end
   
     def edit
@@ -24,7 +24,7 @@ class MeasurementsController < ApplicationController
         @measurement = Measurement.find(params[:id])
         @measurement.update(measurement_params)
 
-        redirect_to user_profile_path(user_id: current_user.id, id: @measurement.user.profile.id)
+        redirect_to user_path(id: current_user.id)
     end
 
     # def show

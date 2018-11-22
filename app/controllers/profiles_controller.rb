@@ -31,7 +31,7 @@ class ProfilesController < ApplicationController
         @profile = Profile.find(params[:id])
         @profile.update(profile_params)
     
-        redirect_to user_profile_path
+        redirect_to user_path(id: current_user.id)
       end
 
     private

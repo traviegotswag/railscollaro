@@ -11,9 +11,8 @@ class CreateOrderItems < ActiveRecord::Migration[5.2]
       t.text :monogram
       t.text :remark
       t.timestamps
-      t.references :product
-      t.references :order
-      t.references :style, optional: true
+      t.references :product, foreign_key: true
+      t.references :order, foreign_key: true
       t.references :measurement, optional: true
     end
   end
