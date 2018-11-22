@@ -17,3 +17,5 @@ class Products < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+# :hashtag_ids => []

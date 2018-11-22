@@ -17,25 +17,30 @@
     <% @order_items.each do |order_item| %>
       <%# <%= render 'orders/order_row', product: order_item.product, order_item: order_item, show_total: true %> 
       <%# <h5><%= order_item.image_url%>
-      <h2 class="pt-4 pb-2">Your Cart</h2>
-      <div class="container">
+      <div class="container offset-2 mx-auto">
+        <h2 class="pt-4 pb-2">Your Cart</h2>
+          <hr>
         <div class="row">
+            <div class="col-4 offset-2">
+              <span><strong>Name: </strong><%= order_item.name%></span><br>
+              <span><strong>Unit Price: </strong><%= number_to_currency(order_item.unit_price) %></span><br>
+              <span><strong>Quantity: </strong><%= order_item.quantity %></span><br>
+              <br>
+              <br>
+              <span><strong>Subtotal: </strong><%= number_to_currency(order_item.total_price) %></span><br>
+            </div>
 
             <div class="col-4">
-              <h5><%= order_item.name%></h5>
-              <h5>Unit Price: $<%= order_item.unit_price %></h5>
-              <h5>Quantity: <%= order_item.quantity %></h5>
-            </div>
-
-            <div class="col-6">
                 <%= image_tag order_item.image_url, :style => "max-width: 150px; max-height: 150px;", :class => "d-inline-block float-right" %>
             </div>
-
         </div>
+        <hr>
+        <a href="https://www.paypal.com/login"><%= image_tag "checkout", :style => "width:250px" %></a>
+        
       </div>
 
-      <hr>
-    <% end %>
 
+      
+    <% end %>
     <%# calculate subtotal %>
 <% end %>

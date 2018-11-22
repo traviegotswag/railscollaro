@@ -13,10 +13,12 @@
       <%= render 'layouts/navigation' %>
       
       <%# what does this mean? %>
-      <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency(current_order.subtotal)} )", order_path, class: "btn btn-link" %>
+      <%= link_to "#{current_order.order_items.size} Item(s) in Cart [ #{number_to_currency(current_order.subtotal)} ]", order_path, class: "d-block float-right mr-3" %>
+      <br>
       
       <%= render 'layouts/footer' %>
 
       <%= yield %>
     </body>
 </html>
+

@@ -1,12 +1,8 @@
 class Order < ApplicationRecord
-    
-  # is this necessary?
     belongs_to :user
     has_many :order_items
 
-    # before_create :set_order_status
-    # before_save :update_subtotal
-    before_save :my_method_name
+    before_save :finalize
 
     def my_method_name
       # decide how you want to calculate the total prices 
@@ -16,7 +12,6 @@ class Order < ApplicationRecord
     end 
 
     enum status: ["pending", "paid", "completed"]
-
     # @user = current_user
     # if @user
       def self.find_existing_order(user)
@@ -25,19 +20,21 @@ class Order < ApplicationRecord
       end
     # end
 
-    # def subtotal
-    #   order_items.collect { |orderitem| orderitem.valid? ? (orderitem.quantity * orderitem.unit_price) : 0 }.sum
-    # end
+    def calc_subtotal
+      order_items.collect { |orderitem| orderitem.valid? ? (orderitem.quantity * orderitem.unit_price) : 0 }.sum
+    end
 
-    # def shippingfee
+    # def calc_shipping
     #   if subtotal > 100, self[:shipping_fee] = 0
     #   else self[:shipping_fee] = 5
     #   end
     # end
       
-    # def total
+    # def calc_total
     #   self[:total] = subtotal + shipping_fee
     # end
+
+  
   # -------------------------------------------------
     private
     
@@ -45,9 +42,10 @@ class Order < ApplicationRecord
         self[:subtotal] = subtotal
       end
 
-      # def set_order_status
-      #   self.order_status_id = 1
-      # end
+    def finalize
+        self[:unit_price] = unit_price
+        self[:total_price] = quantity * self[:unit_price]
+    end
 
   # -------------------------------------------------
   end

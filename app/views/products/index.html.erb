@@ -2,24 +2,24 @@
 	<div class = "container">
 
 
-		<div class = "row">
+		<div class = "row mt-4">
 
 			<% for product in @products %>
-				<div class="col-sm-4">
-					<div class="card border-primary mb-3" style = "margin-bottom: 10px">
-						<div class="card">
+				<div class="col-md-4">
+					<div class="card mb-3 border-0" style = "margin-bottom: 10px">
+						<div class="card border-0">
 							<%= link_to product_path(name:product.name) do %>
-								<div style="max-width: ">
-									<%= image_tag product.image_url_2, :style => 'width: 250px; height: 250px; align: left; margin-left: auto; margin-right: auto; display: block; padding-top: 10px;' %>
+								<div>
+									<%= image_tag product.image_url_2, :style => 'width: 300px; height: 300px; align: left; margin-left: auto; margin-right: auto; display: block; padding-top: 10px;' %>
 								</div>
 							<% end %>
 
 							<div class="card-body text-primary">
 								<%= link_to product_path(name:product.name) do %>
-									<h6 class="card-title" style ="text-align: left"><%= product.name %></h6>
+									<h6 class="card-title" style ="text-align: left; color: #838383;"><%= product.name %></h6>
 								<% end %>
-									<h6 class="card-title" style ="text-align: left"><%= product.fabric_type %></h6>
-									<h6 class="card-title" style ="text-align: left">SGD<%= number_to_currency(product.price, delimiter: ", ") %></h6>
+									<h6 class="card-title" style ="text-align: left; color: #A4A4A4;"><%= product.fabric_type %></h6>
+									<h6 class="card-title" style ="text-align: left; color: #CDCDCD;">SGD<%= number_to_currency(product.price, delimiter: ", ") %></h6>
 							</div>
 						</div>
 					</div>

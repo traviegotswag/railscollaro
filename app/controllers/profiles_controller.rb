@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 
       def new
         @user = User.find(params[:user_id])
-        redirect_to user_profile_path(id: @user.profile.id) if @user.profile
+        redirect_to user_path(id: @user.id) if @user.profile
 
         @profile = Profile.new
       end
@@ -40,3 +40,4 @@ class ProfilesController < ApplicationController
       end
     
 end
+
