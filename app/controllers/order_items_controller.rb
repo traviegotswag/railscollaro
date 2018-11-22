@@ -6,10 +6,6 @@ class OrderItemsController < ApplicationController
     @order_item = OrderItem.new(order_item_params)
     @order_item.order = @order
     @order_item.save 
-    # @order_item = @order.order_items.new(order_item_params)
-    # @order_item.total_price = params[:unit_price] * params[:quantity]
-    # @order.save
-    # session[:order_id] = @order.id
     redirect_to products_path
   end
 
@@ -29,7 +25,7 @@ class OrderItemsController < ApplicationController
 
   private
     def order_item_params
-      params.require(:order_item).permit(:unit_price, :quantity, :total_price, :collar, :front, :cuff, :back, :monogram, :remark, :measurement_id)
+      params.require(:order_item).permit(:unit_price, :quantity, :total_price, :collar, :front, :cuff, :back, :monogram, :remark, :measurement_id, :product_id, :name, :image_url)
     end
 
 end

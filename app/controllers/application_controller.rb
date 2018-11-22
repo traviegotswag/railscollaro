@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     helper_method :current_order
-  
+    
     # order has order status, so for example 0/1/2 => ["pending", "paid", "completed"]
     # find all of a users orders, if he has no "pending", create a new one for him
     def current_order    
-      @order = Order.find_existing_order(current_user)
+      @order = Order.find_existing_order(current_user) 
+    #   what is find_existing_order?
       @order ? @order : Order.create(user: current_user)
     end
 end

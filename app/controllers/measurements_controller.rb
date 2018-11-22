@@ -27,9 +27,12 @@ class MeasurementsController < ApplicationController
         redirect_to user_path(id: current_user.id)
     end
 
-    # def show
-    #   @profile = Profile.find(params[:id])
-    # end
+    def destroy
+        @measurement = Measurement.find(params[:id])
+        @measurement.destroy
+    
+        redirect_to user_path(id: current_user.id)
+    end
 
 
 

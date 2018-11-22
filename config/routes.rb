@@ -4,13 +4,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :profiles, only: [:new, :create, :show, :edit, :update]
-    resources :measurements, only: [:new, :create, :show, :edit, :update]
+    resources :measurements
     # resources :styles, only: [:new, :create, :show, :edit, :update]
-    # resource :cart, only: [:show]
-    
-    # do
-    #   resources :orders
-    #   end
   end 
 
     # Home page

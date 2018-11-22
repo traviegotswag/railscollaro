@@ -6,7 +6,7 @@ class OrderItem < ApplicationRecord
   # does this make sense?
   # has_one :style
 
-  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
+  validates :quantity, presence: true, numericality: { only_intrailseger: true, greater_than: 0 }
   # validate :product_present
   # validate :order_present
 
@@ -14,6 +14,7 @@ class OrderItem < ApplicationRecord
 
   def unit_price
     if persisted?
+      # 
       self[:unit_price]
     else
       product.price
@@ -25,7 +26,7 @@ class OrderItem < ApplicationRecord
   end
 
   private
-    def product_present
+    # def product_present
     #   if product.nil?
     #     errors.add(:product, "is not valid or is not active.")
     #   end

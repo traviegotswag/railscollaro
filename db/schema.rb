@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 2018_11_19_133553) do
     t.text "back"
     t.text "monogram"
     t.text "remark"
+    t.text "name"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "product_id"
@@ -65,21 +67,14 @@ ActiveRecord::Schema.define(version: 2018_11_19_133553) do
     t.index ["product_id"], name: "index_order_items_on_product_id"
   end
 
-  create_table "order_statuses", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.decimal "subtotal", precision: 10, scale: 2
-    t.decimal "shippingfee", precision: 10, scale: 2
+    t.decimal "shipping_fee", precision: 10, scale: 2
     t.integer "total"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "order_status_id"
-    t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

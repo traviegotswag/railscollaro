@@ -151,6 +151,54 @@ trueButton.addEventListener('click', responseHandler);
 AddClass
 newMonument.setAttribute('class', 'monumentsList');
 
+CART
+  <% if @order_items.size == 0 %>
+    <p class="text-center">
+      There are no items in your shopping cart.  Please <%= link_to "go back", root_path %> and add some items to your cart.
+    </p>
+  <% else %>
+    <% @order_items.each do |order_item| %>
+      <%# <%= render 'orders/order_row', product: order_item.product, order_item: order_item, show_total: true %> 
+
+      <div class="well">
+
+        <div class="row">
+          <div class="col-xs-8">
+            <h4><%= product.name %></h4>
+          </div>
+          <div class="col-xs-4">
+
+            <%= form_for order_item, remote: true do |f| %>
+              <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency order_item.unit_price %></span></h4>
+              <div class="row">
+                <div class="col-xs-4">
+                  <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
+                  <%= f.hidden_field :product_id, value: product.id %>
+                </div>
+                <div class="col-xs-8 text-right">
+                  <div class="btn-group">
+                    <%= f.submit "Update Quantity", class: "btn btn-primary" %>
+                    <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+                  </div>
+                </div>
+              </div>
+              <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+</div>
+
+
+
+
+
+
+
 
 # README
 

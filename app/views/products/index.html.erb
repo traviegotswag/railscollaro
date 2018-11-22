@@ -9,7 +9,9 @@
 					<div class="card border-primary mb-3" style = "margin-bottom: 10px">
 						<div class="card">
 							<%= link_to product_path(name:product.name) do %>
-								<%= image_tag product.image_url_2, :style => 'width: 250px; height: 250px; align: left; margin-left: auto; margin-right: auto; display: block; padding-top: 10px;' %>
+								<div style="max-width: ">
+									<%= image_tag product.image_url_2, :style => 'width: 250px; height: 250px; align: left; margin-left: auto; margin-right: auto; display: block; padding-top: 10px;' %>
+								</div>
 							<% end %>
 
 							<div class="card-body text-primary">
