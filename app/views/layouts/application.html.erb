@@ -12,9 +12,9 @@
     <body>
       <%= render 'layouts/navigation' %>
       
-      <% if @user == true%>
-        <%= link_to "#{current_order.order_items.size} Item(s) in Cart [ #{number_to_currency(current_order.subtotal)} ]", order_path, class: "d-block float-right mr-3" %>
-        <br>
+      <% if current_user %>
+          <%= link_to "#{current_order.order_items.size} Item(s) in your cart [ #{number_to_currency(current_order.subtotal)} ]", order_path, class: "d-block float-right mr-3" %>
+          <br>
       <% end %>
       
       <%= render 'layouts/footer' %>

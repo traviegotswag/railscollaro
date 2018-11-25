@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
       @user = current_user
       if @user    
         @order = Order.find_existing_order(current_user) 
-      #   what is find_existing_order?
         @order ? @order : Order.create(user: current_user)
       end
     end

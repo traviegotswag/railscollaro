@@ -9,18 +9,20 @@ class OrderItemsController < ApplicationController
     redirect_to products_path
   end
 
-  # def update
-  #   @order = current_order
-  #   @order_item = @order.order_items.find(params[:id])
-  #   @order_item.update_attributes(order_item_params)
-  #   @order_items = @order.order_items
-  # end
+  def update
+    @order = current_order
+    @order_item = @order.order_items.find(params[:id])
+    @order_item.update_attributes(order_item_params)
+    @order_items = @order.order_items
+    redirect_to order_path
+  end
 
   def destroy
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    redirect_to order_path
   end
 
   private
@@ -29,4 +31,3 @@ class OrderItemsController < ApplicationController
     end
 
 end
-
